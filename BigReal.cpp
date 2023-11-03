@@ -55,7 +55,7 @@ string BigReal::getFractionPart() const {
 
 // Set the value of a BigReal from a string
 // Set the value of a BigReal from a string
-void BigReal::setNum(const std::string& str) {
+void BigReal::setNum(const string& str) {
     if (isValidReal(str)) {
         number = str;
         extractParts();
@@ -74,7 +74,7 @@ void BigReal::setNum(const std::string& str) {
 // ... (existing code)
 
 
-bool BigReal::isValidReal(const std::string& str) const {
+bool BigReal::isValidReal(const string& str) const {
     if (str.empty()) {
         return false;
     }
