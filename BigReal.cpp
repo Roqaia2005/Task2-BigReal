@@ -9,13 +9,14 @@ BigReal::BigReal(const string& str) : number(str) {
        if (isValidReal(str)) {
         number = str;
         extractParts();
-        if (!str.empty()) {
+        if (!str.empty())
+        {
             sign = (str[0] == '-') ? '-' : '+';
-        } else
+        }       else
         {
                sign = '+';
         }
-    } else
+    }           else
        {
         cout << "Invalid Number" << endl;
     }
@@ -42,7 +43,8 @@ size_t BigReal::size() const
     return number.size();
 }
 
-char BigReal::getSign() const {
+char BigReal::getSign() const 
+{
     return sign;
 }
 
