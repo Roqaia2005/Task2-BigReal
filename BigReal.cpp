@@ -11,10 +11,12 @@ BigReal::BigReal(const string& str) : number(str) {
         extractParts();
         if (!str.empty()) {
             sign = (str[0] == '-') ? '-' : '+';
-        } else {
-            sign = '+';
+        } else
+        {
+               sign = '+';
         }
-    } else {
+    } else
+       {
         cout << "Invalid Number" << endl;
     }
 }
@@ -35,7 +37,8 @@ BigReal& BigReal::operator=(const BigReal& other) {
     return *this;
 }
 
-size_t BigReal::size() const {
+size_t BigReal::size() const
+{
     return number.size();
 }
 
