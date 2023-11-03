@@ -32,7 +32,7 @@ public:
  
     void setNum(const string& str) ;
 
-// ... (existing code)
+// .... (existing code)
 
     void extractParts();
 
