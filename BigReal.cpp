@@ -9,6 +9,7 @@
 
 #include<iostream>
 #include "BigReal.h"
+
 using namespace std;
 
 BigReal::BigReal() : number("0"), sign('+'), integerPart("0"), fractionPart("0") {}
@@ -17,22 +18,17 @@ BigReal::BigReal(const string& str) : number(str) {
        if (isValidReal(str)) {
         number = str;
         extractParts();
-        if (!str.empty())
-        {
-        sign = (str[0] == '-') ? '-' : '+';
-        }    
-        else
-        {
-        sign = '+';
+        if (!str.empty()) {
+            sign = (str[0] == '-') ? '-' : '+';
+        } else {
+            sign = '+';
         }
-    }  
-       else
-       {
+    } else {
         cout << "Invalid Number" << endl;
     }
 }
 
-BigReal::BigReal(double value) : sign((value >= 0) ? '+' : '-'), number(std::to_string(std::abs(value))) {
+BigReal::BigReal(double value) : sign((value >= 0) ? '+' : '-'), number(to_string(abs(value))) {
     extractParts();
 }
 
@@ -48,13 +44,11 @@ BigReal& BigReal::operator=(const BigReal& other) {
     return *this;
 }
 
-size_t BigReal::size() const
-{
+size_t BigReal::size() const {
     return number.size();
 }
 
-char BigReal::getSign() const 
-{
+char BigReal::getSign() const {
     return sign;
 }
 
@@ -63,12 +57,9 @@ string BigReal::getIntegerPart() const {
 }
 
 string BigReal::getFractionPart() const {
-    return  fractionPart;
+    return fractionPart;
 }
 
-// ........... (existing code)
-
-// Set the value of a BigReal from a string
 // Set the value of a BigReal from a string
 void BigReal::setNum(const string& str) {
     if (isValidReal(str)) {
@@ -84,12 +75,7 @@ void BigReal::setNum(const string& str) {
     }
 }
 
-
-
-// ..... (existing code)
-
-
-bool BigReal::isValidReal(const string& str) const {
+bool BigReal::isValidReal(const std::string& str) const {
     if (str.empty()) {
         return false;
     }
@@ -97,10 +83,10 @@ bool BigReal::isValidReal(const string& str) const {
     bool decimalPointFound = false;
     for (char c : str) {
         if (!isdigit(c) && (c != '.')) {
-              return false;
+            return false;
         }
         if (c == '.' && decimalPointFound) {
-               return false;
+            return false;
         }
         if (c == '.') {
             decimalPointFound = true;
@@ -116,7 +102,7 @@ bool BigReal::isValidReal(const string& str) const {
 }
 
 void BigReal::extractParts() {
-    if (number.find('.') != std::string::npos) {
+    if (number.find('.') != string::npos) {
         size_t decimalPosition = number.find('.');
         integerPart = number.substr(0, decimalPosition);
         fractionPart = number.substr(decimalPosition + 1);
@@ -127,18 +113,18 @@ void BigReal::extractParts() {
 
 }
 
-ostream& operator<<(ostream& os, const BigReal& bd) {
-    os << bd.sign << bd.integerPart << "." << bd.fractionPart;
+ostream& operator<<(ostream& os, const BigReal& b) {
+    os << b.sign << b.integerPart << "." << b.fractionPart;
     return os;
 }
 
 BigReal operator+(const BigReal& left, const BigReal& right) {
-    double sum = (left.sign == '+' ? 1 : -1) * std::stod(left.number) + (right.sign == '+' ? 1 : -1) * std::stod(right.number);
+    double sum = (left.sign == '+' ? 1 : -1) * stod(left.number) + (right.sign == '+' ? 1 : -1) * stod(right.number);
     return BigReal(sum);
 }
 
 BigReal operator-(const BigReal& left, const BigReal& right) {
-    double diff = (left.sign == '+' ? 1 : -1) * std::stod(left.number) - (right.sign == '+' ? 1 : -1) * std::stod(right.number);
+    double diff = (left.sign == '+' ? 1 : -1) * stod(left.number) - (right.sign == '+' ? 1 : -1) * stod(right.number);
     return BigReal(diff);
 }
 
