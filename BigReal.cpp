@@ -63,7 +63,7 @@ string BigReal::getIntegerPart() const {
 }
 
 string BigReal::getFractionPart() const {
-    return fractionPart;
+    return  fractionPart;
 }
 
 // ........... (existing code)
