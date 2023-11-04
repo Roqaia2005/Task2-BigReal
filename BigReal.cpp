@@ -9,7 +9,6 @@
 
 #include<iostream>
 #include "BigReal.h"
-
 using namespace std;
 
 BigReal::BigReal() : number("0"), sign('+'), integerPart("0"), fractionPart("0") {}
@@ -21,11 +20,13 @@ BigReal::BigReal(const string& str) : number(str) {
         if (!str.empty())
         {
         sign = (str[0] == '-') ? '-' : '+';
-        }       else
+        }    
+        else
         {
-               sign = '+';
+        sign = '+';
         }
-    }           else
+    }  
+       else
        {
         cout << "Invalid Number" << endl;
     }
