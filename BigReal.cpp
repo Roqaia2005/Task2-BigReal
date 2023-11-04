@@ -56,7 +56,7 @@ string BigReal::getFractionPart() const {
     return fractionPart;
 }
 
-// ... (existing code)
+// ....... (existing code)
 
 // Set the value of a BigReal from a string
 // Set the value of a BigReal from a string
