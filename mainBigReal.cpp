@@ -1,3 +1,11 @@
+// File: BigReal.cpp  main file
+// Purpose: Task2 BigReal class
+// Author1: Roqaia Hassan  , ID:20220129
+// Author2: Rawan Ahmed ,    ID:20220132
+// Author3:Basmala Mohammed   ID:20210621
+// Section: s15,s16
+// TA: Mohamed Talaat
+// Date: 27 oct 2023
 #include<iostream>
 #include<string>
 #include <cctype>
