@@ -6,6 +6,7 @@
 // Section: s15,s16
 // TA: Mohamed Talaat
 // Date: 27 oct 2023
+
 #include<iostream>
 #include<string>
 #include <cctype>
@@ -13,9 +14,7 @@
 #include <cmath>
 #include "BigReal.h"
 #include "BigReal.cpp"
-
 using namespace std;
-
 
 int main() {
     BigReal b1("2.45677777777");
@@ -25,15 +24,12 @@ int main() {
     cout << "b1 Sign: " << b1.getSign() << endl;
     cout << "b1 Integer Part: " << b1.getIntegerPart() << endl;
     cout << "b1 Fraction Part: " << b1.getFractionPart() << endl;
-
     cout << "b2: " << b2 << endl;
     cout << "b2 Sign: " << b2.getSign() << endl;
     cout << "b2 Integer Part: " << b2.getIntegerPart() << endl;
     cout << "b2 Fraction Part: " << b2.getFractionPart() << endl;
-
     BigReal sum = b1 + b2;
     BigReal diff = b1 - b2;
-
     cout << "Sum: " << sum << endl;
     cout << "Difference: " << diff << endl;
 
@@ -47,6 +43,7 @@ int main() {
     }
     else{
         cout<<"no";
+    
     }
 
     if (b1 == b1) {
