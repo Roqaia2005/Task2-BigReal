@@ -20,7 +20,7 @@ BigReal::BigReal(const string& str) : number(str) {
         extractParts();
         if (!str.empty())
         {
-            sign = (str[0] == '-') ? '-' : '+';
+        sign = (str[0] == '-') ? '-' : '+';
         }       else
         {
                sign = '+';
@@ -65,7 +65,7 @@ string BigReal::getFractionPart() const {
     return fractionPart;
 }
 
-// ....... (existing code)
+// ........... (existing code)
 
 // Set the value of a BigReal from a string
 // Set the value of a BigReal from a string
@@ -85,7 +85,7 @@ void BigReal::setNum(const string& str) {
 
 
 
-// ... (existing code)
+// ..... (existing code)
 
 
 bool BigReal::isValidReal(const string& str) const {
@@ -96,10 +96,10 @@ bool BigReal::isValidReal(const string& str) const {
     bool decimalPointFound = false;
     for (char c : str) {
         if (!isdigit(c) && (c != '.')) {
-            return false;
+              return false;
         }
         if (c == '.' && decimalPointFound) {
-            return false;
+               return false;
         }
         if (c == '.') {
             decimalPointFound = true;
